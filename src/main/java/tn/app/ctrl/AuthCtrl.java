@@ -41,6 +41,8 @@ public class AuthCtrl {
 	}
 	
 	public User getSelectedUser() {
+		if(selectedUser == null)
+			selectedUser = new User();
 		return selectedUser;
 	}
 
