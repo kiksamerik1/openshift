@@ -49,12 +49,13 @@ public class AuthCtrl {
 	}
 
 	public String addUser(){
-		users.add(user);
+		User toAdd = new User(user.getId(), user.getName(), user.getEmail());
+		users.add(toAdd);
 		return "";
 	}
 	
 	public String removeUser(){
-		users.remove(user);
+		users.remove(selectedUser);
 		return "";
 	}
 	
