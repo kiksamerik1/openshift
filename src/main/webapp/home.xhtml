@@ -46,8 +46,21 @@
 					<h:commandButton value="remove" action="#{auth.removeUser}" >
 						<f:setPropertyActionListener target="#{auth.selectedUser}" value="#{u}"></f:setPropertyActionListener>
 					</h:commandButton>
+					<h:commandButton value="update" action="#{auth.updateUser}" >
+						<f:setPropertyActionListener target="#{auth.selectedUser}" value="#{u}"></f:setPropertyActionListener>
+					</h:commandButton>
 			</h:column>
 		</h:dataTable>
+		<h2>UPDATE USER</h2>
+		<h:panelGrid columns="2">
+		<h:outputText value="ID" />
+			<h:inputText value="#{auth.selectedUser.id}" />
+			<h:outputText value="NAME" />
+			<h:inputText value="#{auth.selectedUser.name}" />
+			<h:outputText value="EMAIL" />
+			<h:inputText value="#{auth.selectedUser.email}" />
+			<h:commandButton value="UPDATE" action="#{auth.updateUser}" />
+		</h:panelGrid>
 	</h:form>
 </body> 
 </html>

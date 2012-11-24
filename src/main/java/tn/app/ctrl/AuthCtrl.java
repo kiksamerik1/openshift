@@ -59,7 +59,9 @@ public class AuthCtrl {
 		return "";
 	}
 	
-	
+	public String updateUser(){
+		return "";
+	}
 	
 	
 	
