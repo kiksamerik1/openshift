@@ -53,19 +53,27 @@ public class AuthCtrl {
 	public String addUser(){
 		User toAdd = new User(user.getId(), user.getName(), user.getEmail());
 		users.add(toAdd);
+		clearUserData(user);
+		clearUserData(selectedUser);
 		return "";
 	}
 	
 	public String removeUser(){
 		users.remove(selectedUser);
+		clearUserData(user);
+		clearUserData(selectedUser);
 		return "";
 	}
 	
 	public String updateUser(){
+		clearUserData(user);
+		clearUserData(selectedUser);
 		return "";
 	}
 	
-	
+	private void clearUserData(User user){
+		user = new User();
+	}
 	
 
 }
