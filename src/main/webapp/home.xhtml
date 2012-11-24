@@ -18,7 +18,7 @@
 			<h:inputText value="#{auth.user.email}" />
 			<h:commandButton value="ADD" action="#{auth.addUser}" />
 		</h:panelGrid>
-	</h:form>
+	
 	<h2>THE USERS</h2>
 		<h:dataTable border="1" value="#{auth.users}" var="u">
 			<h:column>
@@ -39,7 +39,15 @@
 				</f:facet>
 					<h:outputText value="#{u.email}" />
 			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="ACTIONS" />
+				</f:facet>
+					<h:commandButton value="remove" action="#{auth.removeUser}" >
+						<f:setPropertyActionListener target="#{auth.selectedUser}" value="u"></f:setPropertyActionListener>
+					</h:commandButton>
+			</h:column>
 		</h:dataTable>
-
+	</h:form>
 </body> 
 </html>

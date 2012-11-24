@@ -14,6 +14,7 @@ import tn.app.model.User;
 public class AuthCtrl {
 	
 	private User user;
+	private User selectedUser;
 	private List<User> users;
 
 	public AuthCtrl() {
@@ -39,10 +40,24 @@ public class AuthCtrl {
 		this.users = users;
 	}
 	
+	public User getSelectedUser() {
+		return selectedUser;
+	}
+
+	public void setSelectedUser(User selectedUser) {
+		this.selectedUser = selectedUser;
+	}
+
 	public String addUser(){
 		users.add(user);
 		return "";
 	}
+	
+	public String removeUser(){
+		users.remove(user);
+		return "";
+	}
+	
 	
 	
 	
