@@ -44,7 +44,7 @@
 					<h:outputText value="ACTIONS" />
 				</f:facet>
 					<h:commandButton value="remove" action="#{auth.removeUser}" >
-						<f:setPropertyActionListener target="#{auth.selectedUser}" value="u"></f:setPropertyActionListener>
+						<f:setPropertyActionListener target="#{auth.selectedUser}" value="#{u}"></f:setPropertyActionListener>
 					</h:commandButton>
 			</h:column>
 		</h:dataTable>
