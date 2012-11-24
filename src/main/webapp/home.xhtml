@@ -6,7 +6,40 @@
 
 <h:head></h:head> 
 <body> 
-	<h1>KARIM LAHOUEGUE CHANGED THIS!!!</h1>
+	<h1>WELCOME</h1>
+	<h2>ADD USER</h2>
+	<h:form>
+		<h:panelGrid columns="2">
+		<h:outputText value="ID" />
+			<h:inputText value="#{auth.user.id}" />
+			<h:outputText value="NAME" />
+			<h:inputText value="#{auth.user.name}" />
+			<h:outputText value="EMAIL" />
+			<h:inputText value="#{auth.user.email}" />
+			<h:commandButton value="ADD" action="#{auth.addUser}" />
+		</h:panelGrid>
+	</h:form>
+	<h2>THE USERS</h2>
+		<h:dataTable border="1" value="#{auth.users}" var="u">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="ID" />
+				</f:facet>
+					<h:outputText value="#{u.id}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="NAME" />
+				</f:facet>
+					<h:outputText value="#{u.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="EMAIL" />
+				</f:facet>
+					<h:outputText value="#{u.email}" />
+			</h:column>
+		</h:dataTable>
 
 </body> 
 </html>
